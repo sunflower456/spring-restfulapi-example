@@ -1,12 +1,16 @@
-package com.example.restful;
+package com.example.restful.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data //setter getter 생성
+import java.util.Date;
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class HelloWorldBean {
+public class ExceptionResponse {
+    private Date timestamp;
     private String message;
+    private String details;
 }
