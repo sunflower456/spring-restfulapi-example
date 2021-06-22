@@ -4,11 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
+import javax.persistence.*;
 import java.util.Date;
 
 @Data
@@ -17,14 +13,14 @@ import java.util.Date;
 @Entity
 public class User {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
-    @Size(min=2, message = "2글자 이상 입력해 주세요")
+    @Column
     private String name;
-    @Past
+    @Column
     private Date joinDate;
-//    @JsonIgnore
+    @Column
     private String password;
-//    @JsonIgnore
+    @Column
     private String ssn;
 }
